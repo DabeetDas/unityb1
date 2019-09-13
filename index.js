@@ -10,7 +10,6 @@ global.Discord        = require('discord.js');
 global.bot            = new Discord.Client();
 require('http').createServer().listen(3000); 
 
-
 /* Dependencies */
 global.fs             = require('fs');
 global.moment         = require('moment');
@@ -85,8 +84,7 @@ bot.on('message', handleMessage);
  */
 function handleLogin() {
 	console.log('Discord Time Bot is now online!');
-	bot.user.setActivity("Unity Scrims", {type: "WATCHING"});
-	bot.user.setStatus("dnd")
+	bot.user.setGame('with ' + botConfig.prefix + 'time');
 	/**
 	 * @desc Time function that updates the bot's nickname in every server
 	 * @function
