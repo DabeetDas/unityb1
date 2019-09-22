@@ -123,33 +123,7 @@ function handleDisconnect() {
 	}
 }
 
-bot.on('message', message => {
-    
-if(message.content.startsWith("b!info")) {
 
-const embed = new Discord.RichEmbed()
-
-    .setColor("#ffff00")
-    .setTitle("Unity Scrims | ME")
-    .setURL("https://discord.gg/54ycF8M")
-    .setAuthor("Unity Beta", "https://i.imgur.com/heroxyY.png" , "https://contactifcindia.wixsite.com/unityscrims")
-    .setDescription("Version : 21.0.3")
-    .setThumbnail("https://i.imgur.com/heroxyY.png")
-    .addField("CPU Load : 0.0038", "Local Server Latency : 0ms (Gurgaon,India)")
-    .addField("Library : Node.js", "Main stream language : Javascript")
-    .addField("API Latency : 148 ms (EU)","Server Location : Paris , EU")
-    .addField("Servers : 1 (Unity)", "Heap Size: 550 MB")
-    
-    .setFooter(" Developed by Unity Staff " ,"https://i.imgur.com/heroxyY.png"); 
-       
-       
-let channel1 = message.channel 
-
-channel1.send(embed);
-
-
-}
-});
 
 /**
  * @desc Attempt to log into Discord's servers. Handle as many errors as we can instead of crashing.
