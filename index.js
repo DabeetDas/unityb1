@@ -8,8 +8,6 @@
 /* System */
 global.Discord        = require('discord.js');
 global.bot            = new Discord.Client();
-require('http').createServer().listen(3000); 
-
 
 /* Dependencies */
 global.fs             = require('fs');
@@ -85,8 +83,7 @@ bot.on('message', handleMessage);
  */
 function handleLogin() {
 	console.log('Discord Time Bot is now online!');
-	bot.user.setActivity("Unity Scrims", {type: "WATCHING"});
-	bot.user.setStatus("dnd")
+	bot.user.setGame('with ' + botConfig.prefix + 'time');
 	/**
 	 * @desc Time function that updates the bot's nickname in every server
 	 * @function
@@ -127,7 +124,7 @@ function handleDisconnect() {
 }
 
 bot.on('message', message => {
-	
+    
 if(message.content.startsWith("b!info")) {
 
 const embed = new Discord.RichEmbed()
@@ -144,8 +141,8 @@ const embed = new Discord.RichEmbed()
     .addField("Servers : 1 (Unity)", "Heap Size: 550 MB")
     
     .setFooter(" Developed by Unity Staff " ,"https://i.imgur.com/heroxyY.png"); 
-	   
-	   
+       
+       
 let channel1 = message.channel 
 
 channel1.send(embed);
@@ -153,7 +150,6 @@ channel1.send(embed);
 
 }
 });
-
 
 /**
  * @desc Attempt to log into Discord's servers. Handle as many errors as we can instead of crashing.
