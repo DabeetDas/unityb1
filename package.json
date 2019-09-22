@@ -16,12 +16,15 @@
     ""
   ],
   "scripts": {
-    "bot": "node ./index.js"
+    "bot": "node ./index.js",
+    "start": "node index.js"
   },
   "repository": "/discord-time-bot",
   "private": true,
   "dependencies": {
+    "@google-cloud/storage": "^3.2.1",
     "discord.js": "^11.0.0",
+    "dotenv": "^8.1.0",
     "moment-timezone": "^0.5.11",
     "node-persist": "^2.0.10",
     "node-schedule": "^1.2.1"
